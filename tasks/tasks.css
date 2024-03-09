@@ -1,0 +1,368 @@
+@import "/template.css";
+
+.main {
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	position: absolute;
+	top: 15vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 67%;
+	background-color: var(--mainaccent);
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	border-radius: 0.75rem;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	padding: 1.25rem;
+	gap: 1rem;
+}
+
+.list-title {
+	color: white;
+}
+
+.input-section {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	width: 100%;
+	height: 3rem;
+}
+
+.input-section input {
+	height: 100%;
+	width: 100%;
+	padding: 0 0.75rem 0 0.75rem;
+	background-color: var(--background);
+	border: none;
+	border-radius: 0.5rem;
+}
+
+.add-task-btn {
+	font-size: 2.5rem;
+	text-align: center;
+	padding: 0;
+	line-height: 0;
+	height: 3rem;
+	aspect-ratio: 1;
+	background-color: var(--secondaryaccent);
+	border: none;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+
+.todos-filter {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.todos-filter button {
+	padding: 1rem 1.5rem 1rem 1.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	background-color: var(--secondaryaccent);
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+	cursor: pointer;
+}
+
+.task-table {
+	width: 100%;
+	background-color: var(--background);
+	border: none;
+	border-radius: 0.5rem;
+	table-layout: fixed;
+}
+
+.task-table thead {
+	height: 3rem;
+}
+
+.action-btn {
+	background-color: var(--secondaryaccent);
+	border-radius: 0.2rem;
+	border-width: 1px;
+	border-color: var(--text);
+}
+
+.action-btn:not(:last-child) {
+	margin-right: 0.125rem;
+}
+
+.action-icon {
+	font-size: 1.5rem;
+	padding-top: 0.25rem;
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	cursor: pointer;
+	color: white;
+}
+
+.completed {
+	background-color: rgba(0, 255, 0, 0.2);
+}
+
+.pending {
+	background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Delete button */
+
+.button {
+	--paper: #482914;
+	position: relative;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 1vh 1.2vw;
+	border-radius: 0.7vh;
+	min-width: 7.1vw;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	box-shadow: 0 0.2vh 0.5vh black;
+	transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.button span {
+	display: block;
+	font-size: 1.4vh;
+	opacity: var(--span-opacity, 1);
+	transition: transform 0.4s ease 0, opacity 0.3s ease 0;
+	margin-left: 0.5vw;
+}
+
+.button .trash {
+	display: block;
+	position: relative;
+	transform: translate(var(--trash-x, 0), var(--trash-y, 1px)) translateZ(0) scale(var(--trash-scale, 0.64));
+	transition: transform 0.5s;
+}
+
+.button .trash:before,
+.button .trash:after {
+	content: '';
+	position: absolute;
+	height: 0.8vh;
+	width: 0.1vw;
+	border-radius: 0.1vh;
+	background: var(--icon, white);
+	bottom: 100%;
+	transform-origin: 50% 0.3vw;
+	transform: translate(var(--x, 0.15vw), 0.2vh) scaleY(var(--sy, 0.7)) rotate(var(--r, 0deg));
+	transition: transform 0.4s, background 0.3s;
+}
+
+.button .trash:before {
+	left: 0.05vw;
+}
+
+.button .trash:after {
+	right: 0.05vw;
+	--x: -0.15vw;
+}
+
+.button .trash .top {
+	position: absolute;
+	overflow: hidden;
+	left: -0.2vw;
+	right: -0.2vw;
+	bottom: 100%;
+	height: 4vh;
+	z-index: 1;
+	transform: translateY(0.2vh);
+}
+
+.button .trash .top:before,
+.button .trash .top:after {
+	content: '';
+	position: absolute;
+	border-radius: 0.1vh;
+	background: var(--icon, white);
+	width: var(--w, 0.6vw);
+	height: var(--h, 0.2vh);
+	left: var(--l, 0.4vw);
+	bottom: var(--b, 5px);
+	transition: background 0.3s, transform 0.4s;
+}
+
+.button .trash .top:after {
+	--w: 28px;
+	--h: 2px;
+	--l: 0;
+	--b: 0;
+	transform: scaleX(var(--trash-line-scale, 1));
+}
+
+.button .trash .top .paper {
+	width: 14px;
+	height: 18px;
+	background: var(--paper);
+	left: 7px;
+	bottom: 0;
+	border-radius: 1px;
+	position: absolute;
+	transform: translateY(-16px);
+	opacity: 0;
+}
+
+.button .trash .top .paper:before,
+.button .trash .top .paper:after {
+	content: '';
+	width: var(--w, 10px);
+	height: 2px;
+	border-radius: 1px;
+	position: absolute;
+	left: 2px;
+	top: var(--t, 2px);
+	background: white;
+	transform: scaleY(0.7);
+	box-shadow: 0 9px 0 white;
+}
+
+.button .trash .top .paper:after {
+	--t: 5px;
+	--w: 7px;
+}
+
+.button .trash .box {
+	width: 20px;
+	height: 25px;
+	border: 2px solid var(--icon, white);
+	border-radius: 1px 1px 4px 4px;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	transition: border-color 0.3s;
+}
+
+.button .trash .box:before,
+.button .trash .box:after {
+	content: '';
+	position: absolute;
+	width: 4px;
+	height: var(--h, 20px);
+	top: 0;
+	left: var(--l, 50%);
+	background: var(--b, white);
+}
+
+.button .trash .box:before {
+	border-radius: 2px;
+	margin-left: -2px;
+	transform: translateX(-3px) scale(0.6);
+	box-shadow: 10px 0 0 white;
+	opacity: var(--trash-lines-opacity, 1);
+	transition: transform 0.4s, opacity 0.4s;
+}
+
+.button .trash .box:after {
+	--h: 16px;
+	--b: var(--paper);
+	--l: 1px;
+	transform: translate(-0.5px, -16px) scaleX(0.5);
+	box-shadow: 7px 0 0 var(--paper), 14px 0 0 var(--paper), 21px 0 0 var(--paper);
+}
+
+.button.delete {
+	--span-opacity: 0;
+	--span-x: 16px;
+	--span-delay: 0s;
+	--trash-x: 46px;
+	--trash-y: 2px;
+	--trash-scale: 1;
+	--trash-lines-opacity: 0;
+	--trash-line-scale: 0;
+	--icon: #fff;
+	--check-offset: 0;
+	--check-opacity: 1;
+	--check-scale: 1;
+	--check-y: 16px;
+	--check-delay: 1.7s;
+	--checkmark-delay: 2.1s;
+	--check-duration: 0.55s;
+	--check-duration-opacity: 0.3s;
+}
+
+.button.delete .trash:before,
+.button.delete .trash:after {
+	--sy: 1;
+	--x: 0;
+}
+
+.button.delete .trash:before {
+	--r: 40deg;
+}
+
+.button.delete .trash:after {
+	--r: -40deg;
+}
+
+.button.delete .trash .top .paper {
+	animation: paper 1.5s linear forwards 0.5s;
+}
+
+.button.delete .trash .box:after {
+	animation: cut 1.5s linear forwards 0.5s;
+}
+
+@keyframes paper {
+
+	10%,
+	100% {
+		opacity: 1;
+	}
+
+	20% {
+		transform: translateY(-16px);
+	}
+
+	40% {
+		transform: translateY(0);
+	}
+
+	70%,
+	100% {
+		transform: translateY(24px);
+	}
+}
+
+@keyframes cut {
+
+	0%,
+	40% {
+		transform: translate(-0.5px, -16px) scaleX(0.5);
+	}
+
+	100% {
+		transform: translate(-0.5px, 24px) scaleX(0.5);
+	}
+}
+
+html {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+*:before,
+*:after {
+	box-sizing: inherit;
+}

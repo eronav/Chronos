@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Chronos</title>
+	<link href="/home/home.css" rel="stylesheet" type="text/css" />
+	<script src="/chatbot/chatbot.js" type="module"></script>
+	<script src="/navbar/navbar.js" type="module"></script>
+	<script src="/home/home.js" type="module"></script>
+</head>
+
+<body>
+
+	<div class="navbar"></div>
+	<div class="main">
+		<section class="backpage">
+			<section class="title">
+				<h1>Chronos</h1>
+			</section>
+
+			<section class="information">
+				<div class="container">
+					<div class="cards">
+						<div class="text-card tasks">
+							<h3>Tasks</h3>
+							<br>
+							<p>Organize your tasks and keep track of them here.</p>
+							<br>
+						</div>
+						<div class="text-card calendar">
+							<h3>Calendar</h3>
+							<br>
+							<p>See a day by day view of your scheduled events and tasks for that day.</p>
+						</div>
+						<div class="text-card pomodoro">
+							<h3>Pomodoro</h3>
+							<br>
+							<p>Organize your study time using the widely liked Pomodoro Technique.</p>
+						</div>
+						<div class="text-card journal">
+							<h3>Journal</h3>
+							<br>
+							<p>Keep your journals here to in order to keep all of your thoughts in one place.</p>
+						</div>
+						<div class="text-card resources">
+							<h3>Resources</h3>
+							<br>
+							<p>Find more oppurtunities in your community from a wide variety of subjects.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+
+		<section class="main-content">
+      <img draggable ="false" class="gears" src="/assets/gears.jpg" alt="gears">
+			<section class="bottom-content">
+				<p><span>Introducing Chronos. A platform that helps you manage your time and tasks. With Chronos, you can
+						easily create tasks, track your progress, and stay organized. Whether you're a student, a professional, or
+						just someone who needs to stay on track, Chronos is the perfect tool for you. Get started today and
+						start managing your time and tasks with Chronos!</span></p>
+			</section>
+		</section>
+
+		<div class="popup" id="login-popup">
+			<div class="close-btn" id="login-close-btn">&times;</div>
+			<div class="form">
+				<h2>Log In</h2>
+				<div>
+					<label id="login-error-message" style="color: red; opacity: 0;">Please fill in the username and
+						password.</label>
+				</div>
+				<div class="form-element">
+					<label for="email">Email</label>
+					<input type="text" id="login-email" placeholder="Enter Email">
+				</div>
+				<div class="form-element">
+					<label for="password">Password</label>
+					<input type="password" id="login-password" placeholder="Enter Password">
+				</div>
+				<div style="color: black; display: inline"><small>Don't have an account?</small></div>
+				<div style="color: var(--thirdaccent); display: inline; cursor: pointer;" id="signup-show-btn">
+					<small>Sign up</small>
+				</div>
+				<div class="form-element">
+					<button style="background-color: var(--thirdaccent);" id="login-btn">Log in</button>
+				</div>
+			</div>
+		</div>
+		<div class="popup" id="signup-popup">
+			<div class="close-btn" id="signup-close-btn">&times;</div>
+			<div class="form">
+				<h2>Sign Up</h2>
+				<div>
+					<label id="signup-error-message" style="color: red; opacity: 0;">Please enter a valid email and
+						password</label>
+				</div>
+				<div class="form-element">
+					<label for="email">Email</label>
+					<input type="text" id="signup-email" placeholder="Enter Email">
+				</div>
+				<div class="form-element">
+					<label for="password">Password</label>
+					<input type="password" id="signup-password" placeholder="Enter Password">
+				</div>
+				<div style="color: black; display: inline"><small>Already have an account?</small></div>
+				<div style="color: var(--thirdaccent); display: inline; cursor: pointer;" id="login-show-btn"><small>Log
+						in</small>
+				</div>
+				<div class="form-element">
+					<button style="background-color: var(--thirdaccent)" id="signup-btn">Sign Up</button>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="chatbot-container"></div>
+	</div>
+</body>
+
+</html>

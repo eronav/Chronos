@@ -1,0 +1,201 @@
+@import "/template.css";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import "/colors.css";
+
+/* Existing styles */
+body,
+*,
+.wrapper,
+.wrapper .sidebar,
+.wrapper .sidebar ul li,
+.wrapper .sidebar .social_media,
+.wrapper .main_content,
+.wrapper .main_content .info,
+.wrapper .main_content .header {
+	/* Your existing styles */
+}
+
+
+.header {
+	color: var(--text);
+	position: absolute;
+	font-size: 5rem;
+	top: 12vh;
+	left: 41vw;
+
+}
+
+/* New modal styles */
+.modal {
+	display: none;
+	/* Hidden by default */
+	position: fixed;
+	/* Stay in place */
+	z-index: 100000;
+	/* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%;
+	/* Full width */
+	height: 100%;
+	/* Full height */
+	overflow: auto;
+	/* Enable scroll if needed */
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4);
+	/* Black with opacity */
+}
+
+.modal-content {
+	position: absolute;
+	left: 27%;
+	border-radius: 15px;
+	top: 50px;
+	background-color: #ffffff;
+	margin: 15% auto;
+	/* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%;
+	/* Could be more or less, depending on screen size */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	animation-name: animatetop;
+	animation-duration: 0.4s;
+}
+
+@keyframes animatetop {
+	from {
+		top: -300px;
+		opacity: 0
+	}
+
+	to {
+		top: 0;
+		opacity: 1
+	}
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+/* If you have specific font styling for modal titles or inputs, add them here */
+.modal h2 {
+	margin: 0;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.modal input[type="text"] {
+	width: 80%;
+	padding: 10px;
+	margin-top: 20px;
+	border: 1px solid #ffffff;
+	border-radius: 4px;
+}
+
+.modal button {
+	background-color: #0390fc;
+	color: white;
+	padding: 10px 20px;
+	margin-top: 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.modal button:hover {
+	background-color: #0370cc;
+}
+
+
+.add-notebook {
+	background-image: url("/assets/plus.png");
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	cursor: pointer;
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	border: none;
+	z-index: 10000;
+}
+
+.journal {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* Center content within each journal */
+}
+
+
+.journal img {
+	width: 100%;
+	/* Ensure image fills the container */
+	height: auto;
+	/* Maintain aspect ratio */
+}
+
+.journal div {
+	text-align: center;
+	/* Center the title text */
+	margin-top: 5px;
+	font-size: 1.2em;
+	/* Larger font size for the title */
+	font-family: 'Josefin Sans', sans-serif;
+	width: 100%;
+	/* Ensure the title takes the full width of its container */
+	overflow: hidden;
+	/* Prevents overflow */
+	white-space: nowrap;
+	/* Keeps the text in a single line */
+	text-overflow: ellipsis;
+	/* Adds an ellipsis at the end if the text is too long */
+}
+
+.wrapper .main_content {
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	justify-content: top;
+	/* Align children to the start, which is the left side */
+	/* Adjust this value to move content to the right of the sidebar */
+	/* Add padding at the top to avoid touching the navbar */
+	height: 100vh;
+	/* Full height of the viewport */
+	width: 100%;
+}
+
+.journals-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	padding: 20px;
+	margin-left: 5vw;
+	overflow-y: auto;
+	height: 100%;
+	position: absolute;
+	top: 26vh;
+	align-content: bottom;
+	/* Align the wrapped lines to the top */
+	width: 100%;
+	/* Take the full width of the main_content */
+	gap: 1vw;
+	/* Space between items */
+}

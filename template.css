@@ -1,0 +1,34 @@
+@import "/colors.css";
+@import "/navbar/navbar.css";
+@import "/chatbot/chatbot.css";
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  transition: 0.5s;
+}
+
+html {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: var(--background);
+}
+
+.main {
+	height: 100%;
+	width: 100%;
+}

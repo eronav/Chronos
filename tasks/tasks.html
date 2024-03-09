@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Chronos</title>
+	<link href="/tasks/tasks.css" rel="stylesheet" type="text/css" />
+	<script src="/tasks/tasks.js" type="module"></script>
+	<script src="/chatbot/chatbot.js" type="module"></script>
+	<script src="/navbar/navbar.js" type="module"></script>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+	<div class="navbar"></div>
+
+	<div class="main">
+		<div class="container">
+			<h1 class="list-title">Todo List</h1>
+			<div class="input-section">
+				<input placeholder="Add a task..." id="task-input" type="text" />
+				<input id="date-input" type="date" />
+				<button class="add-task-btn" id="add-task-btn">+</button>
+			</div>
+			<div class="todos-filter">
+				<div class="dropdown">
+					<button tabindex="0" class="btn m-1" id="filter-btn">Filter</button>
+				</div>
+				<button class="button btn btn-secondary delete-all-btn" id="delete-all-btn">
+					<div class="trash">
+						<div class="top">
+							<div class="paper"></div>
+						</div>
+						<div class="box"></div>
+					</div>
+					<span>Delete Items</span>
+				</button>
+			</div>
+			<table class="task-table">
+				<thead>
+					<tr>
+						<th>Task</th>
+						<th>Due Date</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody class="table-content">
+				</tbody>
+			</table>
+		</div>
+		<div class="chatbot-container"></div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+.navbar {
+	background-color: var(--secondaryaccent);
+	width: 99vw;
+	margin: 0.5vh 0.5vw 0vh 0.5vw;
+	height: 11vh;
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 10vh;
+	border: 0.55vh solid var(--borders);
+	z-index: 50;
+	top: 0;
+}
+
+.navbar .logo {
+	margin-left: 4vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.navbar .logo:hover {
+	cursor: pointer;
+}
+
+.navbar .logo a img {
+	margin-top: 1vh;
+	width: 5.5vw;
+	height: auto;
+}
+
+.navbar ul {
+	position: absolute;
+	left: 17.5vw;
+	right: 17.5vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	align-items: center;
+}
+
+.navbar ul li {
+	height: 9.9vh;
+	width: 13vw;
+	list-style: none;
+	display: inline;
+	transition: 0.5s;
+}
+
+.navbar ul li:hover {
+	background-color: var(--text);
+}
+
+.navbar ul li a {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	text-decoration: none;
+	color: var(--text);
+	height: 9.9vh;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+	font-size: 1vw;
+}
+
+.navbar ul li:hover a {
+	color: var(--secondaryaccent);
+	transform: scale(1.2);
+}
+
+.navbar ul li a ion-icon {
+	color: black;
+	margin-right: 1vw;
+	font-size: 2vw;
+	transition: 0.5s;
+}
+
+.navbar ul li:hover ion-icon {
+	color: var(--secondaryaccent);
+	transform: scale(1.2);
+	margin-right: 1vw;
+}
+
+.navbar button {
+	position: absolute;
+	right: 3.75vw;
+	top: 2.45vh;
+	bottom: 2.45vh;
+	width: 5vw;
+	height: 5vh;
+	border-radius: 2.5vh;
+	border: 0.1vw solid black;
+	background-color: var(--secondaryaccent);
+	color: var(--text);
+	font-size: 0.8vw;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.navbar button:hover {
+	transform: scale(1.25);
+	border-radius: 3vh;
+	background-color: var(--text);
+	color: var(--secondaryaccent);
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
